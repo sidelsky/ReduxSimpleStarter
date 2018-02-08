@@ -18,7 +18,7 @@ class SearchBar extends Component {
                     placeholder="Search for something"
                 />
                 <span className="search-title">
-                    Searching for:
+                    Searching for:{" "}
                     <span className="search-title-detail">
                         {this.state.term}
                     </span>

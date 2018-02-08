@@ -15,6 +15,7 @@ const API_KEY = "AIzaSyCAdMeIS4zrTe15N9-kNQuGD5fUk8QN7t8";
 
 const Container = styled("div")`
     background: #333;
+    color: ${props => (props.primary ? "hotpink" : "turquoise")};
 `;
 
 const myStyle = css`
@@ -23,7 +24,8 @@ const myStyle = css`
 
 class App extends Component {
     constructor(props) {
-        let defaultSearchterm = "frogs";
+        // Initial title search term
+        let defaultSearchterm = "cars";
 
         super(props);
 
@@ -52,7 +54,7 @@ class App extends Component {
         return (
             <div>
                 <SearchBar onSearchTermChange={videoSearch} />
-                <Container>
+                <Container primary>
                     <p className={myStyle}>Hello World</p>
                 </Container>
                 <VideoDetail video={this.state.selectedVideo} />

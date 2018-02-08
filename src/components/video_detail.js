@@ -20,6 +20,9 @@ const VideoDetail = ({ video }) => {
             <div className="details">
                 <div>{video.snippet.title}</div>
                 <div>{video.snippet.desciption}</div>
+                <a href={url} target="_blank" className="badge">
+                    {url}
+                </a>
             </div>
         </div>
     );
