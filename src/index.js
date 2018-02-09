@@ -22,11 +22,11 @@ const myStyle = css`
     color: rebeccapurple;
 `;
 
+let setVideoLimit = 6;
+let defaultSearchterm = "apple computers";
+
 class App extends Component {
     constructor(props) {
-        // Initial title search term
-        let defaultSearchterm = "cars";
-
         super(props);
 
         this.state = {
@@ -38,12 +38,19 @@ class App extends Component {
     }
 
     videoSearch(term) {
-        YTsearch({ key: API_KEY, term: term }, videos => {
-            this.setState({
-                videos: videos,
-                selectedVideo: videos[0]
-            });
-        });
+        YTsearch(
+            {
+                key: API_KEY,
+                term: term,
+                limit: setVideoLimit
+            },
+            videos => {
+                this.setState({
+                    videos: videos,
+                    selectedVideo: videos[0]
+                });
+            }
+        );
     }
 
     render() {

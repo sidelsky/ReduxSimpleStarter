@@ -55,10 +55,20 @@
     border-radius: 4px;
 }
 
-.list-group-item {
+.list-group .list-group-item {
     cursor: pointer;
+    padding: .75rem .75rem;
 }
 
 .list-group-item:hover {
     background-color: aquamarine;
+}
+
+.media-left img {
+    width: 140px;
+    height: auto;
+}
+
+.video_url {
+    font-size: .85rem;
 }
